@@ -1,93 +1,110 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=29 format=2]
 
-[ext_resource path="res://sprites/Idle/Idle1.png" type="Texture" id=1]
-[ext_resource path="res://sprites/Idle/Idle2.png" type="Texture" id=2]
-[ext_resource path="res://sprites/Idle/Idle3.png" type="Texture" id=3]
-[ext_resource path="res://sprites/Moving/RobotMove.png" type="Texture" id=4]
-[ext_resource path="res://sprites/Idle/Idle4.png" type="Texture" id=5]
-[ext_resource path="res://RobotB.gd" type="Script" id=6]
+[ext_resource path="res://sprites/Moving/RobotMovingOrange.png" type="Texture" id=1]
+[ext_resource path="res://sprites/Idle/orangeIdle.png" type="Texture" id=2]
+[ext_resource path="res://RobotO.gd" type="Script" id=3]
 
 [sub_resource type="AtlasTexture" id=22]
 flags = 4
-atlas = ExtResource( 4 )
+atlas = ExtResource( 1 )
 region = Rect2( 0, 2048, 1024, 1024 )
 
 [sub_resource type="AtlasTexture" id=23]
 flags = 4
-atlas = ExtResource( 4 )
+atlas = ExtResource( 1 )
 region = Rect2( 1024, 2048, 1024, 1024 )
 
 [sub_resource type="AtlasTexture" id=24]
 flags = 4
-atlas = ExtResource( 4 )
+atlas = ExtResource( 1 )
 region = Rect2( 2048, 2048, 1024, 1024 )
 
 [sub_resource type="AtlasTexture" id=25]
 flags = 4
-atlas = ExtResource( 4 )
+atlas = ExtResource( 1 )
 region = Rect2( 3072, 2048, 1024, 1024 )
 
 [sub_resource type="AtlasTexture" id=26]
 flags = 4
-atlas = ExtResource( 4 )
+atlas = ExtResource( 1 )
 region = Rect2( 0, 0, 1024, 1024 )
 
 [sub_resource type="AtlasTexture" id=27]
 flags = 4
-atlas = ExtResource( 4 )
+atlas = ExtResource( 1 )
 region = Rect2( 1024, 0, 1024, 1024 )
 
 [sub_resource type="AtlasTexture" id=28]
 flags = 4
-atlas = ExtResource( 4 )
+atlas = ExtResource( 1 )
 region = Rect2( 2048, 0, 1024, 1024 )
 
 [sub_resource type="AtlasTexture" id=29]
 flags = 4
-atlas = ExtResource( 4 )
+atlas = ExtResource( 1 )
 region = Rect2( 3072, 0, 1024, 1024 )
 
 [sub_resource type="AtlasTexture" id=30]
 flags = 4
-atlas = ExtResource( 4 )
-region = Rect2( 0, 3072, 1024, 1024 )
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 1024, 1024 )
 
 [sub_resource type="AtlasTexture" id=31]
 flags = 4
-atlas = ExtResource( 4 )
-region = Rect2( 1024, 3072, 1024, 1024 )
+atlas = ExtResource( 2 )
+region = Rect2( 1024, 0, 1024, 1024 )
 
 [sub_resource type="AtlasTexture" id=32]
 flags = 4
-atlas = ExtResource( 4 )
-region = Rect2( 2048, 3072, 1024, 1024 )
+atlas = ExtResource( 2 )
+region = Rect2( 0, 1024, 1024, 1024 )
 
 [sub_resource type="AtlasTexture" id=33]
 flags = 4
-atlas = ExtResource( 4 )
-region = Rect2( 3072, 3072, 1024, 1024 )
+atlas = ExtResource( 2 )
+region = Rect2( 1024, 1024, 1024, 1024 )
 
 [sub_resource type="AtlasTexture" id=34]
 flags = 4
-atlas = ExtResource( 4 )
-region = Rect2( 0, 1024, 1024, 1024 )
+atlas = ExtResource( 1 )
+region = Rect2( 0, 3072, 1024, 1024 )
 
 [sub_resource type="AtlasTexture" id=35]
 flags = 4
-atlas = ExtResource( 4 )
-region = Rect2( 1024, 1024, 1024, 1024 )
+atlas = ExtResource( 1 )
+region = Rect2( 1024, 3072, 1024, 1024 )
 
 [sub_resource type="AtlasTexture" id=36]
 flags = 4
-atlas = ExtResource( 4 )
-region = Rect2( 2048, 1024, 1024, 1024 )
+atlas = ExtResource( 1 )
+region = Rect2( 2048, 3072, 1024, 1024 )
 
 [sub_resource type="AtlasTexture" id=37]
 flags = 4
-atlas = ExtResource( 4 )
+atlas = ExtResource( 1 )
+region = Rect2( 3072, 3072, 1024, 1024 )
+
+[sub_resource type="AtlasTexture" id=38]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 0, 1024, 1024, 1024 )
+
+[sub_resource type="AtlasTexture" id=39]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 1024, 1024, 1024, 1024 )
+
+[sub_resource type="AtlasTexture" id=40]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 2048, 1024, 1024, 1024 )
+
+[sub_resource type="AtlasTexture" id=41]
+flags = 4
+atlas = ExtResource( 1 )
 region = Rect2( 3072, 1024, 1024, 1024 )
 
-[sub_resource type="SpriteFrames" id=38]
+[sub_resource type="SpriteFrames" id=17]
 animations = [ {
 "frames": [ SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ) ],
 "loop": true,
@@ -99,17 +116,17 @@ animations = [ {
 "name": "MovingR",
 "speed": 12.0
 }, {
-"frames": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 5 ) ],
+"frames": [ SubResource( 30 ), SubResource( 31 ), SubResource( 32 ), SubResource( 33 ) ],
 "loop": true,
 "name": "Idle",
 "speed": 1.0
 }, {
-"frames": [ SubResource( 30 ), SubResource( 31 ), SubResource( 32 ), SubResource( 33 ) ],
+"frames": [ SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ) ],
 "loop": true,
 "name": "MovingDown",
 "speed": 12.0
 }, {
-"frames": [ SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ) ],
+"frames": [ SubResource( 38 ), SubResource( 39 ), SubResource( 40 ), SubResource( 41 ) ],
 "loop": true,
 "name": "MovingU",
 "speed": 12.0
@@ -223,15 +240,14 @@ tracks/1/keys = {
 "values": [ "MovingDown" ]
 }
 
-[node name="RobotB" type="KinematicBody2D"]
+[node name="RobotO" type="KinematicBody2D"]
 scale = Vector2( 0.1, 0.1 )
-script = ExtResource( 6 )
+script = ExtResource( 3 )
 
 [node name="Robot" type="AnimatedSprite" parent="."]
-scale = Vector2( 1, 1 )
-frames = SubResource( 38 )
+frames = SubResource( 17 )
 animation = "Idle"
-frame = 3
+frame = 1
 playing = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]

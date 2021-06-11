@@ -6,4 +6,5 @@ func _ready():
 
 
 func _on_AnimationPlayer_animation_finished(anim_name):
-	pass # Replace with function body.
+	if anim_name == "startingscreen":
+		SceneChanger.change_Scene("res://TitleScreen.tscn")
