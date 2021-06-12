@@ -21,17 +21,17 @@ func _on_Area2D_body_entered(body):
 
 func _on_Button_body_entered(body):
 	if body.name == "RobotO":
-		get_node("/root/Level7/tiles1/side1/Tile7").frame = 15
+		get_node("/root/Level7/tiles/side1/Tile7").frame = 15
 		$AnimationPlayer.play("move")
 	if body.name == "RobotB":
-		get_node("/root/Level7/tiles1/side1/Tile7").frame = 15
+		get_node("/root/Level7/tiles/side1/Tile7").frame = 15
 		$AnimationPlayer.play("move")
 		
 
 func _on_Button_body_exited(body):
 	if body.name == "RobotO":
-		get_node("/root/Level7/tiles1/side1/Tile7").frame = 14
+		get_node("/root/Level7/tiles/side1/Tile7").frame = 14
 		$AnimationPlayer.play_backwards("move")
 	if body.name == "RobotB":
-		get_node("/root/Level7/tiles1/side1/Tile7").frame = 14
+		get_node("/root/Level7/tiles/side1/Tile7").frame = 14
 		$AnimationPlayer.play_backwards("move")
