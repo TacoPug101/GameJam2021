@@ -1,5 +1,6 @@
 extends Control
 
+
 var exit_level = 0
 var sound = 0
 
@@ -18,4 +19,4 @@ func _process(_delta):
 
 
 func _on_exit_timer_timeout():
-	SceneChanger.change_Scene("res://Level4.tscn")
+	SceneChanger.change_Scene("res://TitleScreen.tscn")

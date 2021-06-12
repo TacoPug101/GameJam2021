@@ -18,4 +18,4 @@ func _process(_delta):
 
 
 func _on_exit_timer_timeout():
-	SceneChanger.change_Scene("res://Level4.tscn")
+	SceneChanger.change_Scene("res://Level5.tscn")

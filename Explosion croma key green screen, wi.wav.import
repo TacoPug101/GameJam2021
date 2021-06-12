@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Explosion croma key green screen, wi.wav-5bd8840bb7a81044013fe8bb33644e93.sample"
+
+[deps]
+
+source_file="res://Explosion croma key green screen, wi.wav"
+dest_files=[ "res://.import/Explosion croma key green screen, wi.wav-5bd8840bb7a81044013fe8bb33644e93.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
