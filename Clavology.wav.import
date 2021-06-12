@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Clavology.wav-317fb9a123629cb61e5c838552817243.sample"
+
+[deps]
+
+source_file="res://Clavology.wav"
+dest_files=[ "res://.import/Clavology.wav-317fb9a123629cb61e5c838552817243.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

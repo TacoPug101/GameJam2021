@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://BraveEightyoneRegular-ZVGvm.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://sprites/Wall_tile.png" type="Texture" id=2]
@@ -20,6 +20,7 @@
 [ext_resource path="res://RobotB.gd" type="Script" id=18]
 [ext_resource path="res://sprites/Non_movable Box.png" type="Texture" id=19]
 [ext_resource path="res://Level4.gd" type="Script" id=20]
+[ext_resource path="res://Clavology.wav" type="AudioStream" id=21]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 10, 232 )
@@ -568,7 +569,7 @@ margin_top = 397.686
 margin_right = 1094.23
 margin_bottom = 583.686
 custom_fonts/font = SubResource( 3 )
-text = "Emotions of emptyness and sadness
+text = "Emotions of emptiness and sadness
 start to flood in"
 align = 1
 valign = 1
@@ -589,11 +590,17 @@ script = ExtResource( 17 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+level = 4
 
 [node name="DFinish" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
 
 [node name="SFinish" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 8 )
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 21 )
+volume_db = -4.0
+autoplay = true
 
 [connection signal="timeout" from="exit_timer" to="." method="_on_exit_timer_timeout"]

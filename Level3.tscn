@@ -1,6 +1,7 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://BraveEightyoneRegular-ZVGvm.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Clavology.wav" type="AudioStream" id=2]
 [ext_resource path="res://RobotO.tscn" type="PackedScene" id=6]
 [ext_resource path="res://RobotB.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Exit.tscn" type="PackedScene" id=8]
@@ -561,5 +562,10 @@ stream = ExtResource( 20 )
 
 [node name="SFinish" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 19 )
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+volume_db = -4.0
+autoplay = true
 
 [connection signal="timeout" from="exit_timer" to="." method="_on_exit_timer_timeout"]

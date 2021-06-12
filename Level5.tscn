@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://BraveEightyoneRegular-ZVGvm.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://sprites/Wall_tile.png" type="Texture" id=2]
@@ -22,6 +22,7 @@
 [ext_resource path="res://sprites/buttonBoxs.png" type="Texture" id=20]
 [ext_resource path="res://sprites/buttons.png" type="Texture" id=21]
 [ext_resource path="res://Level5.gd" type="Script" id=22]
+[ext_resource path="res://Clavology.wav" type="AudioStream" id=23]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 10, 232 )
@@ -610,8 +611,8 @@ margin_top = 397.686
 margin_right = 1094.23
 margin_bottom = 583.686
 custom_fonts/font = SubResource( 4 )
-text = "All the Brothers want is
-to be joined together again"
+text = "All the brothers want is
+to be together again"
 align = 1
 valign = 1
 __meta__ = {
@@ -625,16 +626,21 @@ one_shot = true
 
 [node name="Pause" type="Control" parent="Pause" instance=ExtResource( 11 )]
 pause_mode = 2
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 17 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+level = 5
 
 [node name="DFinish" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 23 )
+volume_db = -4.0
+autoplay = true
 
 [connection signal="body_entered" from="tiles/side1/RedButtonBox/Area2D" to="tiles/side1/RedButtonBox" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="tiles2/side1/CTile3/Area2D" to="tiles/side1/RedButtonBox" method="_on_Button_body_entered"]
