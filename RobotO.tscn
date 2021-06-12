@@ -247,7 +247,6 @@ script = ExtResource( 3 )
 [node name="Robot" type="AnimatedSprite" parent="."]
 frames = SubResource( 17 )
 animation = "Idle"
-frame = 1
 playing = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]

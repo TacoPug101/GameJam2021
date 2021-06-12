@@ -1,6 +1,7 @@
 extends Control
 
-
+func _ready():
+	$AnimationPlayer.play("buttons")
 	
 
 func _on_Start_pressed():
