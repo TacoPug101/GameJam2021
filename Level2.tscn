@@ -521,12 +521,12 @@ __meta__ = {
 }
 
 [node name="discription" type="Label" parent="."]
-margin_left = 88.0
-margin_top = 448.0
-margin_right = 936.0
-margin_bottom = 552.0
+margin_left = 51.2305
+margin_top = 445.172
+margin_right = 971.23
+margin_bottom = 549.172
 custom_fonts/font = SubResource( 2 )
-text = "There AI gets better and Better"
+text = "Their A.I. progressively gets better"
 align = 1
 valign = 1
 __meta__ = {

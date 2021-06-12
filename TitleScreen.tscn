@@ -102,11 +102,13 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -384.0
-margin_top = -42.0
-margin_right = 1.0
+margin_left = -215.99
+margin_top = -87.3059
+margin_right = 169.01
+margin_bottom = -0.305908
 custom_fonts/font = SubResource( 2 )
-text = "A Two Bros in A cup Game"
+text = "A 2BrosInACup 
+Production"
 __meta__ = {
 "_edit_use_anchors_": false
 }

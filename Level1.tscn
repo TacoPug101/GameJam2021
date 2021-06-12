@@ -18,7 +18,7 @@
 extents = Vector2( 10, 232 )
 
 [sub_resource type="DynamicFont" id=2]
-size = 50
+size = 43
 outline_size = 3
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 9 )
@@ -521,13 +521,13 @@ __meta__ = {
 }
 
 [node name="discription" type="Label" parent="."]
-margin_left = 88.0
-margin_top = 448.0
-margin_right = 936.0
-margin_bottom = 552.0
+margin_left = -58.7745
+margin_top = 397.686
+margin_right = 1094.23
+margin_bottom = 583.686
 custom_fonts/font = SubResource( 2 )
-text = "Two brothers are made one day.
-they get seperated for testing."
+text = "Two brothers are created on the same day.
+They get seperated for testing."
 align = 1
 valign = 1
 __meta__ = {
