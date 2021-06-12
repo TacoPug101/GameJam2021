@@ -1,646 +1,671 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://BraveEightyoneRegular-ZVGvm.ttf" type="DynamicFontData" id=1]
-[ext_resource path="res://sprites/Non_movable Box.png" type="Texture" id=2]
-[ext_resource path="res://Exit.tscn" type="PackedScene" id=3]
-[ext_resource path="res://RobotO.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Pause.tscn" type="PackedScene" id=5]
-[ext_resource path="res://RobotB.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Level7.gd" type="Script" id=7]
-[ext_resource path="res://Single finish.wav" type="AudioStream" id=8]
-[ext_resource path="res://Caged.wav" type="AudioStream" id=9]
-[ext_resource path="res://RedButtonBox l7.gd" type="Script" id=10]
-[ext_resource path="res://sprites/tile.png" type="Texture" id=12]
-[ext_resource path="res://Double finish.wav" type="AudioStream" id=13]
-[ext_resource path="res://sprites/OrangeEnter.png" type="Texture" id=15]
-[ext_resource path="res://sprites/CornerTile.png" type="Texture" id=16]
-[ext_resource path="res://sprites/Wall_tile.png" type="Texture" id=17]
-[ext_resource path="res://sprites/BlueEnter.png" type="Texture" id=18]
-[ext_resource path="res://sprites/buttons.png" type="Texture" id=21]
-[ext_resource path="res://sprites/buttonBoxs.png" type="Texture" id=22]
-[ext_resource path="res://BLUEbutton l7.gd" type="Script" id=23]
+[ext_resource path="res://sprites/CornerTile.png" type="Texture" id=2]
+[ext_resource path="res://sprites/Wall_tile.png" type="Texture" id=3]
+[ext_resource path="res://sprites/BlueEnter.png" type="Texture" id=4]
+[ext_resource path="res://sprites/OrangeEnter.png" type="Texture" id=5]
+[ext_resource path="res://sprites/tile.png" type="Texture" id=6]
+[ext_resource path="res://sprites/exit.png" type="Texture" id=7]
+[ext_resource path="res://Double finish.wav" type="AudioStream" id=8]
+[ext_resource path="res://sprites/going through exit.png" type="Texture" id=9]
+[ext_resource path="res://Single finish.wav" type="AudioStream" id=10]
+[ext_resource path="res://Exit.tscn" type="PackedScene" id=11]
+[ext_resource path="res://RobotB.tscn" type="PackedScene" id=12]
+[ext_resource path="res://RobotO.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Pause.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Exit.gd" type="Script" id=15]
+[ext_resource path="res://Pause.gd" type="Script" id=16]
+[ext_resource path="res://RobotO.gd" type="Script" id=17]
+[ext_resource path="res://RobotB.gd" type="Script" id=18]
+[ext_resource path="res://Caged.wav" type="AudioStream" id=19]
+[ext_resource path="res://sprites/Non_movable Box.png" type="Texture" id=20]
+[ext_resource path="res://Level9.gd" type="Script" id=21]
 
-[sub_resource type="Animation" id=1]
-resource_name = "move"
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 192, 112 ), Vector2( 128, 112 ) ]
-}
-
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 256.001, 256 )
-
-[sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 384.001, 384 )
-
-[sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 256, 256 )
-
-[sub_resource type="Animation" id=5]
-resource_name = "move"
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 192.128, 112 ), Vector2( 192.128, 176 ) ]
-}
-
-[sub_resource type="RectangleShape2D" id=6]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 10, 232 )
 
-[sub_resource type="RectangleShape2D" id=7]
-extents = Vector2( 16, 16 )
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 80, 8 )
 
-[sub_resource type="DynamicFont" id=8]
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 24, 56 )
+
+[sub_resource type="DynamicFont" id=2]
 size = 43
 outline_size = 3
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 1 )
 
-[sub_resource type="DynamicFont" id=9]
-size = 100
-outline_size = 10
-outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 1 )
-
-[sub_resource type="Animation" id=10]
-resource_name = "PlusMad"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
-}
-
-[node name="Level7" type="Control"]
+[node name="Level9" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 7 )
+script = ExtResource( 21 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="tiles" type="Node2D" parent="."]
-position = Vector2( 24, 16 )
+position = Vector2( 32, 16 )
 
 [node name="side1" type="Node2D" parent="tiles"]
 
 [node name="WTile" type="Sprite" parent="tiles/side1"]
 position = Vector2( 64, 112 )
 scale = Vector2( 0.0625, 0.0625 )
-texture = ExtResource( 17 )
+texture = ExtResource( 3 )
 offset = Vector2( 512, 512 )
 
 [node name="WTile4" type="Sprite" parent="tiles/side1"]
 position = Vector2( 384, 176 )
 rotation = 3.14159
 scale = Vector2( 0.0625, 0.0625 )
-texture = ExtResource( 17 )
+texture = ExtResource( 20 )
 offset = Vector2( 512, 512 )
 
 [node name="WTile11" type="Sprite" parent="tiles/side1"]
 position = Vector2( 384, 240 )
 rotation = 3.14159
 scale = Vector2( 0.0625, 0.0625 )
-texture = ExtResource( 17 )
+texture = ExtResource( 6 )
+offset = Vector2( 512, 512 )
+
+[node name="WTile13" type="Sprite" parent="tiles/side1"]
+position = Vector2( 448, 240 )
+rotation = 3.14159
+scale = Vector2( 0.0625, 0.0625 )
+texture = ExtResource( 6 )
+offset = Vector2( 512, 512 )
+
+[node name="WTile14" type="Sprite" parent="tiles/side1"]
+position = Vector2( 512, 240 )
+rotation = 3.14159
+scale = Vector2( 0.0625, 0.0625 )
+texture = ExtResource( 20 )
+offset = Vector2( 512, 512 )
+
+[node name="WTile15" type="Sprite" parent="tiles/side1"]
+position = Vector2( 576, 240 )
+rotation = 3.14159
+scale = Vector2( 0.0625, 0.0625 )
+texture = ExtResource( 20 )
+offset = Vector2( 512, 512 )
+
+[node name="WTile19" type="Sprite" parent="tiles/side1"]
+position = Vector2( 448, 304 )
+rotation = 3.14159
+scale = Vector2( 0.0625, 0.0625 )
+texture = ExtResource( 6 )
+offset = Vector2( 512, 512 )
+
+[node name="WTile20" type="Sprite" parent="tiles/side1"]
+position = Vector2( 512, 304 )
+rotation = 3.14159
+scale = Vector2( 0.0625, 0.0625 )
+texture = ExtResource( 6 )
+offset = Vector2( 512, 512 )
+
+[node name="WTile21" type="Sprite" parent="tiles/side1"]
+position = Vector2( 576, 304 )
+rotation = 3.14159
+scale = Vector2( 0.0625, 0.0625 )
+texture = ExtResource( 6 )
+offset = Vector2( 512, 512 )
+
+[node name="WTile16" type="Sprite" parent="tiles/side1"]
+position = Vector2( 448, 176 )
+rotation = 3.14159
+scale = Vector2( 0.0625, 0.0625 )
+texture = ExtResource( 6 )
+offset = Vector2( 512, 512 )
+
+[node name="WTile17" type="Sprite" parent="tiles/side1"]
+position = Vector2( 512, 176 )
+rotation = 3.14159
+scale = Vector2( 0.0625, 0.0625 )
+texture = ExtResource( 6 )
+offset = Vector2( 512, 512 )
+
+[node name="WTile18" type="Sprite" parent="tiles/side1"]
+position = Vector2( 576, 176 )
+rotation = 3.14159
+scale = Vector2( 0.0625, 0.0625 )
+texture = ExtResource( 6 )
 offset = Vector2( 512, 512 )
 
 [node name="WTile12" type="Sprite" parent="tiles/side1"]
 position = Vector2( 384, 304 )
 rotation = 3.14159
 scale = Vector2( 0.0625, 0.0625 )
-texture = ExtResource( 17 )
+texture = ExtResource( 6 )
 offset = Vector2( 512, 512 )
 
 [node name="WTile5" type="Sprite" parent="tiles/side1"]
 position = Vector2( 192, 48 )
 rotation = 1.5708
 scale = Vector2( 0.0625, 0.0625 )
-texture = ExtResource( 17 )
+texture = ExtResource( 3 )
 offset = Vector2( 512, 512 )
 
 [node name="WTile9" type="Sprite" parent="tiles/side1"]
 position = Vector2( 256, 48 )
 rotation = 1.5708
 scale = Vector2( 0.0625, 0.0625 )
-texture = ExtResource( 12 )
+texture = ExtResource( 3 )
 offset = Vector2( 512, 512 )
 
 [node name="WTile10" type="Sprite" parent="tiles/side1"]
 position = Vector2( 320, 48 )
 rotation = 1.5708
 scale = Vector2( 0.0625, 0.0625 )
-texture = ExtResource( 17 )
+texture = ExtResource( 3 )
 offset = Vector2( 512, 512 )
 
 [node name="WTile6" type="Sprite" parent="tiles/side1"]
 position = Vector2( 128, 368 )
 rotation = -1.5708
 scale = Vector2( 0.0625, 0.0625 )
-texture = ExtResource( 12 )
+texture = ExtResource( 20 )
 offset = Vector2( 512, 512 )
 
 [node name="WTile7" type="Sprite" parent="tiles/side1"]
 position = Vector2( 192, 368 )
 rotation = -1.5708
 scale = Vector2( 0.0625, 0.0625 )
-texture = ExtResource( 17 )
+texture = ExtResource( 6 )
 offset = Vector2( 512, 512 )
 
 [node name="WTile8" type="Sprite" parent="tiles/side1"]
 position = Vector2( 256, 368 )
 rotation = -1.5708
 scale = Vector2( 0.0625, 0.0625 )
-texture = ExtResource( 17 )
+texture = ExtResource( 3 )
 offset = Vector2( 512, 512 )
 
 [node name="WTile2" type="Sprite" parent="tiles/side1"]
 position = Vector2( 64, 176 )
 scale = Vector2( 0.0625, 0.0625 )
-texture = ExtResource( 17 )
+texture = ExtResource( 3 )
 offset = Vector2( 512, 512 )
 
 [node name="WTile3" type="Sprite" parent="tiles/side1"]
 position = Vector2( 64, 240 )
 scale = Vector2( 0.0625, 0.0625 )
-texture = ExtResource( 17 )
+texture = ExtResource( 3 )
 offset = Vector2( 512, 512 )
 
 [node name="Tile" type="Sprite" parent="tiles/side1"]
 position = Vector2( 128, 112 )
 scale = Vector2( 0.0625, 0.0625 )
-texture = ExtResource( 12 )
+texture = ExtResource( 20 )
 offset = Vector2( 512, 512 )
 
 [node name="Tile2" type="Sprite" parent="tiles/side1"]
 position = Vector2( 192, 112 )
 scale = Vector2( 0.0625, 0.0625 )
-texture = ExtResource( 12 )
+texture = ExtResource( 20 )
 offset = Vector2( 512, 512 )
 
 [node name="Tile3" type="Sprite" parent="tiles/side1"]
 position = Vector2( 256, 112 )
 scale = Vector2( 0.0625, 0.0625 )
-texture = ExtResource( 12 )
+texture = ExtResource( 20 )
 offset = Vector2( 512, 512 )
 
 [node name="Tile4" type="Sprite" parent="tiles/side1"]
 position = Vector2( 256, 176 )
 scale = Vector2( 0.0625, 0.0625 )
-texture = ExtResource( 12 )
+texture = ExtResource( 6 )
 offset = Vector2( 512, 512 )
 
 [node name="Tile5" type="Sprite" parent="tiles/side1"]
 position = Vector2( 256, 240 )
 scale = Vector2( 0.0625, 0.0625 )
-texture = ExtResource( 12 )
+texture = ExtResource( 20 )
 offset = Vector2( 512, 512 )
 
 [node name="Tile6" type="Sprite" parent="tiles/side1"]
 position = Vector2( 192, 240 )
 scale = Vector2( 0.0625, 0.0625 )
-texture = ExtResource( 2 )
+texture = ExtResource( 20 )
 offset = Vector2( 512, 512 )
 
 [node name="Tile7" type="Sprite" parent="tiles/side1"]
 position = Vector2( 192, 176 )
 scale = Vector2( 0.0625, 0.0625 )
-texture = ExtResource( 21 )
+texture = ExtResource( 6 )
 offset = Vector2( 512, 512 )
-hframes = 4
-vframes = 5
-frame = 14
 
 [node name="Tile8" type="Sprite" parent="tiles/side1"]
 position = Vector2( 128, 176 )
 scale = Vector2( 0.0625, 0.0625 )
-texture = ExtResource( 12 )
+texture = ExtResource( 6 )
 offset = Vector2( 512, 512 )
 
 [node name="Tile9" type="Sprite" parent="tiles/side1"]
 position = Vector2( 128, 240 )
 scale = Vector2( 0.0625, 0.0625 )
-texture = ExtResource( 12 )
+texture = ExtResource( 20 )
 offset = Vector2( 512, 512 )
 
 [node name="CTile" type="Sprite" parent="tiles/side1"]
 position = Vector2( 96, 80 )
 scale = Vector2( 0.0625, 0.0625 )
-texture = ExtResource( 16 )
+texture = ExtResource( 2 )
 
 [node name="CTile2" type="Sprite" parent="tiles/side1"]
 position = Vector2( 96, 336 )
 rotation = -1.5708
 scale = Vector2( 0.0625, 0.0625 )
-texture = ExtResource( 16 )
+texture = ExtResource( 2 )
 
 [node name="CTile3" type="Sprite" parent="tiles/side1"]
 position = Vector2( 352, 80 )
 rotation = 1.5708
 scale = Vector2( 0.0625, 0.0625 )
-texture = ExtResource( 16 )
+texture = ExtResource( 2 )
 
 [node name="CTile4" type="Sprite" parent="tiles/side1"]
 position = Vector2( 352, 336 )
 rotation = 3.14159
 scale = Vector2( 0.0625, 0.0625 )
-texture = ExtResource( 16 )
+texture = ExtResource( 2 )
 
-[node name="RedButtonBox" type="Sprite" parent="tiles/side1"]
-position = Vector2( 192, 112 )
-rotation = 1.5708
-scale = Vector2( 0.0625, 0.0625 )
-texture = ExtResource( 22 )
-offset = Vector2( 512, 512 )
-vframes = 2
-script = ExtResource( 10 )
+[node name="Exit" type="Node2D" parent="tiles/side1" instance=ExtResource( 11 )]
+position = Vector2( 64, 368 )
+script = ExtResource( 15 )
 __meta__ = {
 "_edit_group_": true
 }
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="tiles/side1/RedButtonBox"]
-playback_speed = 2.0
-anims/move = SubResource( 1 )
-
-[node name="StaticBody2D" type="StaticBody2D" parent="tiles/side1/RedButtonBox"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="tiles/side1/RedButtonBox/StaticBody2D"]
-position = Vector2( 512.002, 511.998 )
-shape = SubResource( 2 )
-
-[node name="Area2D" type="Area2D" parent="tiles/side1/RedButtonBox"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="tiles/side1/RedButtonBox/Area2D"]
-position = Vector2( 512.002, 511.998 )
-shape = SubResource( 3 )
-
-[node name="Exit" parent="tiles/side1" instance=ExtResource( 3 )]
-position = Vector2( 192, 432 )
-exit = 2
+light = ExtResource( 9 )
+non_light = ExtResource( 7 )
 
 [node name="Enter" type="Sprite" parent="tiles/side1"]
-position = Vector2( 224, 16 )
+position = Vector2( 224, 400 )
 scale = Vector2( 0.06225, 0.063 )
-texture = ExtResource( 15 )
+texture = ExtResource( 5 )
 hframes = 2
 vframes = 2
-frame = 2
 
 [node name="tiles2" type="Node2D" parent="."]
-position = Vector2( 552, 16 )
+position = Vector2( 544, 16 )
 
 [node name="side1" type="Node2D" parent="tiles2"]
 
 [node name="WTile" type="Sprite" parent="tiles2/side1"]
 position = Vector2( 64, 112 )
 scale = Vector2( 0.0625, 0.0625 )
-texture = ExtResource( 17 )
+texture = ExtResource( 6 )
 offset = Vector2( 512, 512 )
 
 [node name="WTile4" type="Sprite" parent="tiles2/side1"]
 position = Vector2( 384, 176 )
 rotation = 3.14159
 scale = Vector2( 0.0625, 0.0625 )
-texture = ExtResource( 2 )
+texture = ExtResource( 20 )
 offset = Vector2( 512, 512 )
 
 [node name="WTile11" type="Sprite" parent="tiles2/side1"]
 position = Vector2( 384, 240 )
 rotation = 3.14159
 scale = Vector2( 0.0625, 0.0625 )
-texture = ExtResource( 17 )
+texture = ExtResource( 20 )
 offset = Vector2( 512, 512 )
 
 [node name="WTile12" type="Sprite" parent="tiles2/side1"]
 position = Vector2( 384, 304 )
 rotation = 3.14159
 scale = Vector2( 0.0625, 0.0625 )
-texture = ExtResource( 17 )
+texture = ExtResource( 20 )
 offset = Vector2( 512, 512 )
 
 [node name="WTile5" type="Sprite" parent="tiles2/side1"]
 position = Vector2( 192, 48 )
 rotation = 1.5708
 scale = Vector2( 0.0625, 0.0625 )
-texture = ExtResource( 17 )
+texture = ExtResource( 3 )
 offset = Vector2( 512, 512 )
 
 [node name="WTile9" type="Sprite" parent="tiles2/side1"]
 position = Vector2( 256, 48 )
 rotation = 1.5708
 scale = Vector2( 0.0625, 0.0625 )
-texture = ExtResource( 12 )
+texture = ExtResource( 6 )
 offset = Vector2( 512, 512 )
 
 [node name="WTile10" type="Sprite" parent="tiles2/side1"]
 position = Vector2( 320, 48 )
 rotation = 1.5708
 scale = Vector2( 0.0625, 0.0625 )
-texture = ExtResource( 17 )
+texture = ExtResource( 20 )
 offset = Vector2( 512, 512 )
 
 [node name="WTile6" type="Sprite" parent="tiles2/side1"]
 position = Vector2( 128, 368 )
 rotation = -1.5708
 scale = Vector2( 0.0625, 0.0625 )
-texture = ExtResource( 17 )
+texture = ExtResource( 3 )
 offset = Vector2( 512, 512 )
 
 [node name="WTile7" type="Sprite" parent="tiles2/side1"]
 position = Vector2( 192, 368 )
 rotation = -1.5708
 scale = Vector2( 0.0625, 0.0625 )
-texture = ExtResource( 17 )
+texture = ExtResource( 6 )
 offset = Vector2( 512, 512 )
 
 [node name="WTile8" type="Sprite" parent="tiles2/side1"]
 position = Vector2( 256, 368 )
 rotation = -1.5708
 scale = Vector2( 0.0625, 0.0625 )
-texture = ExtResource( 17 )
+texture = ExtResource( 3 )
 offset = Vector2( 512, 512 )
 
 [node name="WTile2" type="Sprite" parent="tiles2/side1"]
-position = Vector2( 64, 176 )
+position = Vector2( 62.4004, 176 )
 scale = Vector2( 0.0625, 0.0625 )
-texture = ExtResource( 12 )
+texture = ExtResource( 20 )
 offset = Vector2( 512, 512 )
 
 [node name="WTile3" type="Sprite" parent="tiles2/side1"]
 position = Vector2( 64, 240 )
 scale = Vector2( 0.0625, 0.0625 )
-texture = ExtResource( 17 )
+texture = ExtResource( 6 )
 offset = Vector2( 512, 512 )
 
 [node name="Tile" type="Sprite" parent="tiles2/side1"]
 position = Vector2( 128, 112 )
 scale = Vector2( 0.0625, 0.0625 )
-texture = ExtResource( 12 )
+texture = ExtResource( 6 )
 offset = Vector2( 512, 512 )
 
 [node name="Tile2" type="Sprite" parent="tiles2/side1"]
 position = Vector2( 192, 112 )
 scale = Vector2( 0.0625, 0.0625 )
-texture = ExtResource( 12 )
+texture = ExtResource( 6 )
 offset = Vector2( 512, 512 )
 
 [node name="Tile3" type="Sprite" parent="tiles2/side1"]
 position = Vector2( 256, 112 )
 scale = Vector2( 0.0625, 0.0625 )
-texture = ExtResource( 12 )
+texture = ExtResource( 6 )
 offset = Vector2( 512, 512 )
 
 [node name="Tile4" type="Sprite" parent="tiles2/side1"]
 position = Vector2( 256, 176 )
 scale = Vector2( 0.0625, 0.0625 )
-texture = ExtResource( 12 )
+texture = ExtResource( 6 )
 offset = Vector2( 512, 512 )
 
 [node name="Tile5" type="Sprite" parent="tiles2/side1"]
 position = Vector2( 256, 240 )
 scale = Vector2( 0.0625, 0.0625 )
-texture = ExtResource( 12 )
+texture = ExtResource( 20 )
 offset = Vector2( 512, 512 )
 
 [node name="Tile6" type="Sprite" parent="tiles2/side1"]
 position = Vector2( 192, 240 )
 scale = Vector2( 0.0625, 0.0625 )
-texture = ExtResource( 12 )
+texture = ExtResource( 20 )
 offset = Vector2( 512, 512 )
 
 [node name="Tile7" type="Sprite" parent="tiles2/side1"]
 position = Vector2( 192, 176 )
 scale = Vector2( 0.0625, 0.0625 )
-texture = ExtResource( 12 )
+texture = ExtResource( 6 )
 offset = Vector2( 512, 512 )
 
 [node name="Tile8" type="Sprite" parent="tiles2/side1"]
 position = Vector2( 128, 176 )
 scale = Vector2( 0.0625, 0.0625 )
-texture = ExtResource( 12 )
+texture = ExtResource( 20 )
 offset = Vector2( 512, 512 )
 
 [node name="Tile9" type="Sprite" parent="tiles2/side1"]
 position = Vector2( 128, 240 )
 scale = Vector2( 0.0625, 0.0625 )
-texture = ExtResource( 2 )
+texture = ExtResource( 20 )
 offset = Vector2( 512, 512 )
 
 [node name="CTile" type="Sprite" parent="tiles2/side1"]
-position = Vector2( 352, 80 )
-rotation = 1.5708
+position = Vector2( 96, 80 )
 scale = Vector2( 0.0625, 0.0625 )
-texture = ExtResource( 16 )
+texture = ExtResource( 2 )
 
 [node name="CTile2" type="Sprite" parent="tiles2/side1"]
 position = Vector2( 96, 336 )
 rotation = -1.5708
 scale = Vector2( 0.0625, 0.0625 )
-texture = ExtResource( 16 )
+texture = ExtResource( 2 )
 
 [node name="CTile3" type="Sprite" parent="tiles2/side1"]
-position = Vector2( 96, 80 )
+position = Vector2( 352, 80 )
+rotation = 1.5708
 scale = Vector2( 0.0625, 0.0625 )
-texture = ExtResource( 21 )
-hframes = 4
-vframes = 5
-frame = 6
-
-[node name="Area2D" type="Area2D" parent="tiles2/side1/CTile3"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="tiles2/side1/CTile3/Area2D"]
-shape = SubResource( 4 )
-
-[node name="Area2D2" type="Area2D" parent="tiles2/side1/CTile3"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="tiles2/side1/CTile3/Area2D2"]
-position = Vector2( -6400, 2048 )
-shape = SubResource( 4 )
+texture = ExtResource( 20 )
 
 [node name="CTile4" type="Sprite" parent="tiles2/side1"]
 position = Vector2( 352, 336 )
 rotation = 3.14159
 scale = Vector2( 0.0625, 0.0625 )
-texture = ExtResource( 16 )
+texture = ExtResource( 2 )
 
-[node name="RedButtonBox2" type="Sprite" parent="tiles2/side1"]
-position = Vector2( 192.128, 112 )
-rotation = 1.5708
-scale = Vector2( 0.0625, 0.0625 )
-texture = ExtResource( 22 )
-offset = Vector2( 512, 512 )
-vframes = 2
-frame = 1
-script = ExtResource( 23 )
+[node name="Exit" type="Node2D" parent="tiles2/side1" instance=ExtResource( 11 )]
+position = Vector2( 255.872, 48 )
+script = ExtResource( 15 )
 __meta__ = {
 "_edit_group_": true
 }
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="tiles2/side1/RedButtonBox2"]
-playback_speed = 2.0
-anims/move = SubResource( 5 )
-
-[node name="StaticBody2D" type="StaticBody2D" parent="tiles2/side1/RedButtonBox2"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="tiles2/side1/RedButtonBox2/StaticBody2D"]
-position = Vector2( 512.002, 511.998 )
-shape = SubResource( 2 )
-
-[node name="Area2D" type="Area2D" parent="tiles2/side1/RedButtonBox2"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="tiles2/side1/RedButtonBox2/Area2D"]
-position = Vector2( 512.002, 511.998 )
-shape = SubResource( 3 )
-
-[node name="Exit" parent="tiles2/side1" instance=ExtResource( 3 )]
-position = Vector2( 64, 240 )
+exit = 0
+light = ExtResource( 9 )
+non_light = ExtResource( 7 )
 
 [node name="Enter2" type="Sprite" parent="tiles2"]
-position = Vector2( 224, 16 )
+position = Vector2( 224, 400 )
 scale = Vector2( 0.06225, 0.063 )
-texture = ExtResource( 18 )
+texture = ExtResource( 4 )
 hframes = 2
 vframes = 2
-frame = 2
 
 [node name="OOB" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="OOB"]
-position = Vector2( 80, 192 )
-shape = SubResource( 6 )
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="OOB"]
-position = Vector2( 416, 192 )
-shape = SubResource( 6 )
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="OOB"]
-position = Vector2( 592, -44.8 )
-shape = SubResource( 6 )
+position = Vector2( 88, 96 )
+shape = SubResource( 1 )
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="OOB"]
 position = Vector2( 944, 192 )
-shape = SubResource( 6 )
+shape = SubResource( 1 )
 
 [node name="CollisionShape2D19" type="CollisionShape2D" parent="OOB"]
-position = Vector2( 816, -168 )
-shape = SubResource( 6 )
+position = Vector2( 808, -168 )
+shape = SubResource( 1 )
 
 [node name="CollisionShape2D20" type="CollisionShape2D" parent="OOB"]
-position = Vector2( 736, -168 )
-shape = SubResource( 6 )
+position = Vector2( 729.5, -168 )
+shape = SubResource( 1 )
 
 [node name="CollisionShape2D7" type="CollisionShape2D" parent="OOB"]
-position = Vector2( 592, 488 )
-shape = SubResource( 6 )
+position = Vector2( 816, 616 )
+shape = SubResource( 1 )
 
 [node name="CollisionShape2D8" type="CollisionShape2D" parent="OOB"]
-position = Vector2( 536, 280 )
-shape = SubResource( 6 )
+position = Vector2( 736, 616 )
+shape = SubResource( 1 )
 
 [node name="CollisionShape2D9" type="CollisionShape2D" parent="OOB"]
-position = Vector2( 232, 616 )
-shape = SubResource( 6 )
+position = Vector2( 294.3, 616 )
+shape = SubResource( 1 )
 
 [node name="CollisionShape2D10" type="CollisionShape2D" parent="OOB"]
-position = Vector2( 144, 616 )
-shape = SubResource( 6 )
+position = Vector2( 208, 616 )
+shape = SubResource( 1 )
 
 [node name="CollisionShape2D11" type="CollisionShape2D" parent="OOB"]
-position = Vector2( 208, -168 )
-shape = SubResource( 6 )
+position = Vector2( 24, 232 )
+shape = SubResource( 1 )
 
 [node name="CollisionShape2D12" type="CollisionShape2D" parent="OOB"]
-position = Vector2( 286.3, -168 )
-shape = SubResource( 6 )
+position = Vector2( 294.3, -168 )
+shape = SubResource( 1 )
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="OOB"]
-position = Vector2( 1040, 56 )
+position = Vector2( 1032, 56 )
 rotation = 1.5708
-shape = SubResource( 6 )
-
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="OOB"]
-position = Vector2( 512, 56 )
-rotation = 1.5708
-shape = SubResource( 6 )
+shape = SubResource( 1 )
 
 [node name="CollisionShape2D13" type="CollisionShape2D" parent="OOB"]
-position = Vector2( 328, -12.2 )
+position = Vector2( 328, 56 )
 rotation = 1.5708
-shape = SubResource( 6 )
+shape = SubResource( 1 )
 
 [node name="CollisionShape2D14" type="CollisionShape2D" parent="OOB"]
-position = Vector2( -24, 56 )
+position = Vector2( -144, 312 )
 rotation = 1.5708
-shape = SubResource( 6 )
+shape = SubResource( 1 )
 
 [node name="CollisionShape2D15" type="CollisionShape2D" parent="OOB"]
-position = Vector2( -104, 397.686 )
+position = Vector2( -16, 392 )
 rotation = 1.5708
-shape = SubResource( 6 )
-
-[node name="CollisionShape2D16" type="CollisionShape2D" parent="OOB"]
-position = Vector2( 480, 397.686 )
-rotation = 1.5708
-shape = SubResource( 6 )
+shape = SubResource( 1 )
 
 [node name="CollisionShape2D17" type="CollisionShape2D" parent="OOB"]
-position = Vector2( 807.872, 397.686 )
+position = Vector2( 1040, 392 )
 rotation = 1.5708
-shape = SubResource( 6 )
+shape = SubResource( 1 )
 
 [node name="CollisionShape2D18" type="CollisionShape2D" parent="OOB"]
-position = Vector2( 777.5, -12.2 )
+position = Vector2( 777.5, -8 )
 rotation = 1.5708
-shape = SubResource( 6 )
+shape = SubResource( 1 )
 
 [node name="CollisionShape2D21" type="CollisionShape2D" parent="OOB"]
 position = Vector2( 777.5, 457.48 )
 rotation = 1.5708
-shape = SubResource( 6 )
+shape = SubResource( 1 )
 
 [node name="CollisionShape2D22" type="CollisionShape2D" parent="OOB"]
 position = Vector2( 280, 457.48 )
 rotation = 1.5708
-shape = SubResource( 6 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="OOB"]
+position = Vector2( 376, 56 )
+shape = SubResource( 3 )
+
+[node name="CollisionShape2D16" type="CollisionShape2D" parent="OOB"]
+position = Vector2( 640, 56 )
+shape = SubResource( 3 )
 
 [node name="CollisionShape2D23" type="CollisionShape2D" parent="OOB"]
-position = Vector2( 248, 288 )
-shape = SubResource( 7 )
+position = Vector2( 648, 392 )
+shape = SubResource( 3 )
 
 [node name="CollisionShape2D24" type="CollisionShape2D" parent="OOB"]
-position = Vector2( 712, 288 )
-shape = SubResource( 7 )
+position = Vector2( 384, 392 )
+shape = SubResource( 3 )
 
 [node name="CollisionShape2D25" type="CollisionShape2D" parent="OOB"]
-position = Vector2( 904, 160 )
-shape = SubResource( 7 )
+position = Vector2( 496, 336 )
+shape = SubResource( 3 )
 
-[node name="RobotO" parent="." instance=ExtResource( 4 )]
-position = Vector2( 249.5, 37 )
+[node name="CollisionShape2D26" type="CollisionShape2D" parent="OOB"]
+position = Vector2( 528, 336 )
+shape = SubResource( 3 )
 
-[node name="RobotB" parent="." instance=ExtResource( 6 )]
-position = Vector2( 777.5, 39 )
+[node name="CollisionShape2D27" type="CollisionShape2D" parent="OOB"]
+position = Vector2( 600, 392 )
+rotation = 1.5708
+shape = SubResource( 3 )
+
+[node name="CollisionShape2D28" type="CollisionShape2D" parent="OOB"]
+position = Vector2( 424, 400 )
+rotation = 1.5708
+shape = SubResource( 3 )
+
+[node name="CollisionShape2D29" type="CollisionShape2D" parent="OOB"]
+position = Vector2( 424, 48 )
+rotation = 1.5708
+shape = SubResource( 3 )
+
+[node name="CollisionShape2D30" type="CollisionShape2D" parent="OOB"]
+position = Vector2( 600, 48 )
+rotation = 1.5708
+shape = SubResource( 3 )
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="OOB"]
+position = Vector2( 528, 120 )
+shape = SubResource( 3 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="OOB"]
+position = Vector2( 496, 120 )
+shape = SubResource( 3 )
+
+[node name="CollisionShape2D37" type="CollisionShape2D" parent="OOB"]
+position = Vector2( 544, 224 )
+rotation = 1.5708
+shape = SubResource( 4 )
+
+[node name="CollisionShape2D38" type="CollisionShape2D" parent="OOB"]
+position = Vector2( 670.4, 224 )
+rotation = 1.5708
+shape = SubResource( 4 )
+
+[node name="CollisionShape2D41" type="CollisionShape2D" parent="OOB"]
+position = Vector2( 864, 96 )
+rotation = 1.5708
+shape = SubResource( 4 )
+
+[node name="CollisionShape2D42" type="CollisionShape2D" parent="OOB"]
+position = Vector2( 352, 160 )
+rotation = 1.5708
+shape = SubResource( 4 )
+
+[node name="CollisionShape2D43" type="CollisionShape2D" parent="OOB"]
+position = Vector2( 224, 160 )
+rotation = 1.5708
+shape = SubResource( 4 )
+
+[node name="CollisionShape2D44" type="CollisionShape2D" parent="OOB"]
+position = Vector2( 287.872, 288 )
+rotation = 1.5708
+shape = SubResource( 4 )
+
+[node name="CollisionShape2D45" type="CollisionShape2D" parent="OOB"]
+position = Vector2( 192, 320 )
+shape = SubResource( 4 )
+
+[node name="CollisionShape2D46" type="CollisionShape2D" parent="OOB"]
+position = Vector2( 896, 192 )
+shape = SubResource( 4 )
+
+[node name="CollisionShape2D47" type="CollisionShape2D" parent="OOB"]
+position = Vector2( 896, 256 )
+shape = SubResource( 4 )
+
+[node name="CollisionShape2D48" type="CollisionShape2D" parent="OOB"]
+position = Vector2( 704, 256 )
+shape = SubResource( 4 )
+
+[node name="CollisionShape2D39" type="CollisionShape2D" parent="OOB"]
+position = Vector2( 736.128, 288 )
+rotation = 1.5708
+shape = SubResource( 4 )
+
+[node name="CollisionShape2D40" type="CollisionShape2D" parent="OOB"]
+position = Vector2( 832, 288 )
+rotation = 1.5708
+shape = SubResource( 4 )
+
+[node name="RobotO" type="KinematicBody2D" parent="." instance=ExtResource( 13 )]
+position = Vector2( 257.5, 421 )
+scale = Vector2( 0.1, 0.1 )
+script = ExtResource( 17 )
+
+[node name="RobotB" type="KinematicBody2D" parent="." instance=ExtResource( 12 )]
+position = Vector2( 769.5, 421 )
+scale = Vector2( 0.1, 0.1 )
+script = ExtResource( 18 )
 
 [node name="World" type="Control" parent="."]
 visible = false
@@ -665,12 +690,12 @@ limit_right = 1280
 limit_bottom = 856
 
 [node name="Level" type="Label" parent="."]
-margin_left = 376.0
-margin_top = 112.0
-margin_right = 642.0
-margin_bottom = 216.0
-custom_fonts/font = SubResource( 8 )
-text = "Level 7"
+margin_left = 384.0
+margin_top = 32.0
+margin_right = 650.0
+margin_bottom = 136.0
+custom_fonts/font = SubResource( 2 )
+text = "Level 9"
 align = 1
 valign = 1
 __meta__ = {
@@ -682,8 +707,8 @@ margin_left = -58.7745
 margin_top = 397.686
 margin_right = 1094.23
 margin_bottom = 583.686
-custom_fonts/font = SubResource( 8 )
-text = "Someday..."
+custom_fonts/font = SubResource( 2 )
+text = "Reunion"
 align = 1
 valign = 1
 __meta__ = {
@@ -695,39 +720,25 @@ one_shot = true
 
 [node name="Pause" type="CanvasLayer" parent="."]
 
-[node name="Pause" parent="Pause" instance=ExtResource( 5 )]
-level = 7
-
-[node name="DFinish" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 13 )
-
-[node name="Music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 9 )
-volume_db = -4.0
-autoplay = true
-
-[node name="SFinish" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 8 )
-
-[node name="Maddness" type="Label" parent="."]
-modulate = Color( 1, 1, 1, 0 )
-margin_left = 120.0
-margin_top = 232.0
-margin_right = 902.0
-margin_bottom = 352.0
-custom_fonts/font = SubResource( 9 )
-text = "+ MADDNESS"
+[node name="Pause" type="Control" parent="Pause" instance=ExtResource( 14 )]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 16 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+level = 9
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Maddness"]
-anims/PlusMad = SubResource( 10 )
+[node name="DFinish" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
 
-[connection signal="body_entered" from="tiles/side1/RedButtonBox/Area2D" to="tiles/side1/RedButtonBox" method="_on_Area2D_body_entered"]
-[connection signal="body_entered" from="tiles2/side1/CTile3/Area2D" to="tiles/side1/RedButtonBox" method="_on_Button_body_entered"]
-[connection signal="body_exited" from="tiles2/side1/CTile3/Area2D" to="tiles/side1/RedButtonBox" method="_on_Button_body_exited"]
-[connection signal="body_entered" from="tiles2/side1/CTile3/Area2D2" to="tiles2/side1/RedButtonBox2" method="_on_Button_body_entered"]
-[connection signal="body_exited" from="tiles2/side1/CTile3/Area2D2" to="tiles2/side1/RedButtonBox2" method="_on_Button_body_exited"]
-[connection signal="body_entered" from="tiles2/side1/RedButtonBox2/Area2D" to="tiles/side1/RedButtonBox" method="_on_Area2D_body_entered"]
+[node name="SFinish" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 19 )
+volume_db = -4.0
+autoplay = true
+
 [connection signal="timeout" from="exit_timer" to="." method="_on_exit_timer_timeout"]

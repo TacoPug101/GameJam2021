@@ -2,6 +2,7 @@
 
 [ext_resource path="res://BraveEightyoneRegular-ZVGvm.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://sprites/Wall_tile.png" type="Texture" id=2]
+[ext_resource path="res://Caged.wav" type="AudioStream" id=3]
 [ext_resource path="res://Double finish.wav" type="AudioStream" id=4]
 [ext_resource path="res://sprites/tile.png" type="Texture" id=5]
 [ext_resource path="res://sprites/CornerTile.png" type="Texture" id=6]
@@ -14,7 +15,6 @@
 [ext_resource path="res://Pause.tscn" type="PackedScene" id=14]
 [ext_resource path="res://sprites/Non_movable Box.png" type="Texture" id=19]
 [ext_resource path="res://Level4.gd" type="Script" id=20]
-[ext_resource path="res://Clavology.wav" type="AudioStream" id=21]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 10, 232 )
@@ -570,7 +570,7 @@ stream = ExtResource( 4 )
 stream = ExtResource( 8 )
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 21 )
+stream = ExtResource( 3 )
 volume_db = -4.0
 autoplay = true
 

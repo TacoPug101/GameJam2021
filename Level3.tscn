@@ -1,7 +1,7 @@
 [gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://BraveEightyoneRegular-ZVGvm.ttf" type="DynamicFontData" id=1]
-[ext_resource path="res://Clavology.wav" type="AudioStream" id=2]
+[ext_resource path="res://Caged.wav" type="AudioStream" id=2]
 [ext_resource path="res://RobotO.tscn" type="PackedScene" id=6]
 [ext_resource path="res://RobotB.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Exit.tscn" type="PackedScene" id=8]

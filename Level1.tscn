@@ -13,7 +13,7 @@
 [ext_resource path="res://Pause.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Single finish.wav" type="AudioStream" id=12]
 [ext_resource path="res://Double finish.wav" type="AudioStream" id=13]
-[ext_resource path="res://Clavology.wav" type="AudioStream" id=14]
+[ext_resource path="res://Caged.wav" type="AudioStream" id=14]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 10, 232 )

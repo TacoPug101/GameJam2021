@@ -9,11 +9,13 @@ func _on_Area2D_body_entered(body):
 		yield(get_tree().create_timer(1),"timeout")
 		SceneChanger.change_Scene("res://Level5.tscn")
 		SceneChanger.maddness += 1
+		get_node("/root/Level5/Maddness/AnimationPlayer").play("PlusMad")
 	if body.name == "RobotB":
 		body.dead = true
 		yield(get_tree().create_timer(1),"timeout")
 		SceneChanger.change_Scene("res://Level5.tscn")
 		SceneChanger.maddness += 1
+		get_node("/root/Level5/Maddness/AnimationPlayer").play("PlusMad")
 
 
 func _on_Button_body_entered(body):

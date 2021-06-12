@@ -19,4 +19,7 @@ func _process(_delta):
 
 
 func _on_exit_timer_timeout():
-	SceneChanger.change_Scene("res://Level6.tscn")
+	if SceneChanger.maddness < 5:
+		SceneChanger.change_Scene("res://Level9.tscn")
+	else:
+		SceneChanger.change_Scene("res://Level10.tscn")
