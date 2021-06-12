@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Exit.tscn" type="PackedScene" id=1]
 [ext_resource path="res://RobotO.tscn" type="PackedScene" id=2]
@@ -7,8 +7,10 @@
 [ext_resource path="res://sprites/CornerTile.png" type="Texture" id=5]
 [ext_resource path="res://sprites/Wall_tile.png" type="Texture" id=6]
 [ext_resource path="res://sprites/BlueEnter.png" type="Texture" id=7]
+[ext_resource path="res://BraveEightyoneRegular-ZVGvm.ttf" type="DynamicFontData" id=8]
 [ext_resource path="res://sprites/OrangeEnter.png" type="Texture" id=9]
-[ext_resource path="res://WhiteSystematticDuo-BWY5w.ttf" type="DynamicFontData" id=11]
+[ext_resource path="res://Single finish.wav" type="AudioStream" id=10]
+[ext_resource path="res://Double finish.wav" type="AudioStream" id=11]
 [ext_resource path="res://Level2.gd" type="Script" id=15]
 [ext_resource path="res://Pause.tscn" type="PackedScene" id=16]
 
@@ -19,7 +21,7 @@ extents = Vector2( 10, 232 )
 size = 50
 outline_size = 3
 outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 11 )
+font_data = ExtResource( 8 )
 
 [node name="Level2" type="Control"]
 anchor_right = 1.0
@@ -538,5 +540,11 @@ one_shot = true
 
 [node name="Pause" parent="Pause" instance=ExtResource( 16 )]
 level = 2
+
+[node name="DFinish" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 11 )
+
+[node name="SFinish" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
 
 [connection signal="timeout" from="exit_timer" to="." method="_on_exit_timer_timeout"]

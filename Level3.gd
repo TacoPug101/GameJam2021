@@ -16,5 +16,6 @@ func _process(_delta):
 	else:
 		sound = 0
 
+
 func _on_exit_timer_timeout():
-	SceneChanger.change_Scene("res://Level2.tscn")
+	SceneChanger.change_Scene("res://TitleScreen.tscn")
