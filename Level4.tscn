@@ -1,12 +1,10 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://BraveEightyoneRegular-ZVGvm.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://sprites/Wall_tile.png" type="Texture" id=2]
-[ext_resource path="res://sprites/going through exit.png" type="Texture" id=3]
 [ext_resource path="res://Double finish.wav" type="AudioStream" id=4]
 [ext_resource path="res://sprites/tile.png" type="Texture" id=5]
 [ext_resource path="res://sprites/CornerTile.png" type="Texture" id=6]
-[ext_resource path="res://sprites/exit.png" type="Texture" id=7]
 [ext_resource path="res://Single finish.wav" type="AudioStream" id=8]
 [ext_resource path="res://sprites/OrangeEnter.png" type="Texture" id=9]
 [ext_resource path="res://sprites/BlueEnter.png" type="Texture" id=10]
@@ -14,10 +12,6 @@
 [ext_resource path="res://RobotB.tscn" type="PackedScene" id=12]
 [ext_resource path="res://RobotO.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Pause.tscn" type="PackedScene" id=14]
-[ext_resource path="res://Exit.gd" type="Script" id=15]
-[ext_resource path="res://RobotO.gd" type="Script" id=16]
-[ext_resource path="res://Pause.gd" type="Script" id=17]
-[ext_resource path="res://RobotB.gd" type="Script" id=18]
 [ext_resource path="res://sprites/Non_movable Box.png" type="Texture" id=19]
 [ext_resource path="res://Level4.gd" type="Script" id=20]
 [ext_resource path="res://Clavology.wav" type="AudioStream" id=21]
@@ -28,10 +22,10 @@ extents = Vector2( 10, 232 )
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 48, 10 )
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 16, 16 )
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=4]
 size = 43
 outline_size = 3
 outline_color = Color( 0, 0, 0, 1 )
@@ -155,7 +149,7 @@ shape = SubResource( 2 )
 
 [node name="CollisionShape2D10" type="CollisionShape2D" parent="OOB"]
 position = Vector2( 312, 229 )
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 
 [node name="tiles" type="Node2D" parent="."]
 position = Vector2( 24, 16 )
@@ -320,15 +314,9 @@ rotation = 3.14159
 scale = Vector2( 0.0625, 0.0625 )
 texture = ExtResource( 6 )
 
-[node name="Exit" type="Node2D" parent="tiles/side1" instance=ExtResource( 11 )]
+[node name="Exit" parent="tiles/side1" instance=ExtResource( 11 )]
 position = Vector2( 255.872, 48 )
-script = ExtResource( 15 )
-__meta__ = {
-"_edit_group_": true
-}
 exit = 0
-light = ExtResource( 3 )
-non_light = ExtResource( 7 )
 
 [node name="Enter" type="Sprite" parent="tiles/side1"]
 position = Vector2( 416, 208 )
@@ -501,15 +489,9 @@ rotation = 3.14159
 scale = Vector2( 0.0625, 0.0625 )
 texture = ExtResource( 6 )
 
-[node name="Exit" type="Node2D" parent="tiles2/side1" instance=ExtResource( 11 )]
+[node name="Exit" parent="tiles2/side1" instance=ExtResource( 11 )]
 position = Vector2( 448, 240 )
-script = ExtResource( 15 )
-__meta__ = {
-"_edit_group_": true
-}
 exit = 3
-light = ExtResource( 3 )
-non_light = ExtResource( 7 )
 
 [node name="Enter2" type="Sprite" parent="tiles2"]
 position = Vector2( 224, 400 )
@@ -518,15 +500,11 @@ texture = ExtResource( 10 )
 hframes = 2
 vframes = 2
 
-[node name="RobotO" type="KinematicBody2D" parent="." instance=ExtResource( 13 )]
+[node name="RobotO" parent="." instance=ExtResource( 13 )]
 position = Vector2( 441.5, 229 )
-scale = Vector2( 0.1, 0.1 )
-script = ExtResource( 16 )
 
-[node name="RobotB" type="KinematicBody2D" parent="." instance=ExtResource( 12 )]
+[node name="RobotB" parent="." instance=ExtResource( 12 )]
 position = Vector2( 777.5, 421 )
-scale = Vector2( 0.1, 0.1 )
-script = ExtResource( 18 )
 
 [node name="World" type="Control" parent="."]
 visible = false
@@ -555,7 +533,7 @@ margin_left = 384.0
 margin_top = 112.0
 margin_right = 650.0
 margin_bottom = 216.0
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
 text = "Level 4"
 align = 1
 valign = 1
@@ -568,7 +546,7 @@ margin_left = -58.7745
 margin_top = 397.686
 margin_right = 1094.23
 margin_bottom = 583.686
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
 text = "Emotions of emptiness and sadness
 start to flood in"
 align = 1
@@ -582,14 +560,7 @@ one_shot = true
 
 [node name="Pause" type="CanvasLayer" parent="."]
 
-[node name="Pause" type="Control" parent="Pause" instance=ExtResource( 14 )]
-pause_mode = 2
-anchor_right = 1.0
-anchor_bottom = 1.0
-script = ExtResource( 17 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="Pause" parent="Pause" instance=ExtResource( 14 )]
 level = 4
 
 [node name="DFinish" type="AudioStreamPlayer" parent="."]

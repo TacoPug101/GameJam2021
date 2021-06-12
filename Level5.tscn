@@ -1,12 +1,10 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://BraveEightyoneRegular-ZVGvm.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://sprites/Wall_tile.png" type="Texture" id=2]
-[ext_resource path="res://sprites/going through exit.png" type="Texture" id=3]
 [ext_resource path="res://Double finish.wav" type="AudioStream" id=4]
 [ext_resource path="res://sprites/tile.png" type="Texture" id=5]
 [ext_resource path="res://sprites/CornerTile.png" type="Texture" id=6]
-[ext_resource path="res://sprites/exit.png" type="Texture" id=7]
 [ext_resource path="res://Single finish.wav" type="AudioStream" id=8]
 [ext_resource path="res://sprites/OrangeEnter.png" type="Texture" id=9]
 [ext_resource path="res://sprites/BlueEnter.png" type="Texture" id=10]
@@ -14,11 +12,7 @@
 [ext_resource path="res://Exit.tscn" type="PackedScene" id=12]
 [ext_resource path="res://RobotO.tscn" type="PackedScene" id=13]
 [ext_resource path="res://RobotB.tscn" type="PackedScene" id=14]
-[ext_resource path="res://Exit.gd" type="Script" id=15]
-[ext_resource path="res://RobotO.gd" type="Script" id=16]
-[ext_resource path="res://Pause.gd" type="Script" id=17]
 [ext_resource path="res://RedButtonBox.gd" type="Script" id=18]
-[ext_resource path="res://RobotB.gd" type="Script" id=19]
 [ext_resource path="res://sprites/buttonBoxs.png" type="Texture" id=20]
 [ext_resource path="res://sprites/buttons.png" type="Texture" id=21]
 [ext_resource path="res://Level5.gd" type="Script" id=22]
@@ -27,7 +21,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 10, 232 )
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=2]
 resource_name = "move"
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:position")
@@ -42,16 +36,16 @@ tracks/0/keys = {
 "values": [ Vector2( 256, 48 ), Vector2( 320, 48 ) ]
 }
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 256.001, 256 )
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 384.001, 384 )
 
-[sub_resource type="RectangleShape2D" id=6]
+[sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 256, 256 )
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFont" id=6]
 size = 43
 outline_size = 3
 outline_color = Color( 0, 0, 0, 1 )
@@ -341,29 +335,23 @@ vframes = 2
 script = ExtResource( 18 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="tiles/side1/RedButtonBox"]
-anims/move = SubResource( 5 )
+anims/move = SubResource( 2 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="tiles/side1/RedButtonBox"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="tiles/side1/RedButtonBox/StaticBody2D"]
 position = Vector2( 512.002, 511.998 )
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 
 [node name="Area2D" type="Area2D" parent="tiles/side1/RedButtonBox"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="tiles/side1/RedButtonBox/Area2D"]
 position = Vector2( 512.002, 511.998 )
-shape = SubResource( 3 )
+shape = SubResource( 4 )
 
-[node name="Exit" type="Node2D" parent="tiles/side1" instance=ExtResource( 12 )]
+[node name="Exit" parent="tiles/side1" instance=ExtResource( 12 )]
 position = Vector2( 255.872, 48 )
-script = ExtResource( 15 )
-__meta__ = {
-"_edit_group_": true
-}
 exit = 0
-light = ExtResource( 3 )
-non_light = ExtResource( 7 )
 
 [node name="Enter" type="Sprite" parent="tiles/side1"]
 position = Vector2( 224, 400 )
@@ -535,7 +523,7 @@ frame = 6
 [node name="Area2D" type="Area2D" parent="tiles2/side1/CTile3"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="tiles2/side1/CTile3/Area2D"]
-shape = SubResource( 6 )
+shape = SubResource( 5 )
 
 [node name="CTile4" type="Sprite" parent="tiles2/side1"]
 position = Vector2( 352, 336 )
@@ -543,15 +531,9 @@ rotation = 3.14159
 scale = Vector2( 0.0625, 0.0625 )
 texture = ExtResource( 6 )
 
-[node name="Exit" type="Node2D" parent="tiles2/side1" instance=ExtResource( 12 )]
+[node name="Exit" parent="tiles2/side1" instance=ExtResource( 12 )]
 position = Vector2( 255.872, 48 )
-script = ExtResource( 15 )
-__meta__ = {
-"_edit_group_": true
-}
 exit = 0
-light = ExtResource( 3 )
-non_light = ExtResource( 7 )
 
 [node name="Enter2" type="Sprite" parent="tiles2"]
 position = Vector2( 224, 400 )
@@ -560,15 +542,11 @@ texture = ExtResource( 10 )
 hframes = 2
 vframes = 2
 
-[node name="RobotO" type="KinematicBody2D" parent="." instance=ExtResource( 13 )]
+[node name="RobotO" parent="." instance=ExtResource( 13 )]
 position = Vector2( 249.5, 421 )
-scale = Vector2( 0.1, 0.1 )
-script = ExtResource( 16 )
 
-[node name="RobotB" type="KinematicBody2D" parent="." instance=ExtResource( 14 )]
+[node name="RobotB" parent="." instance=ExtResource( 14 )]
 position = Vector2( 777.5, 421 )
-scale = Vector2( 0.1, 0.1 )
-script = ExtResource( 19 )
 
 [node name="World" type="Control" parent="."]
 visible = false
@@ -597,7 +575,7 @@ margin_left = 379.0
 margin_top = 144.0
 margin_right = 645.0
 margin_bottom = 248.0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 6 )
 text = "Level 5"
 align = 1
 valign = 1
@@ -610,7 +588,7 @@ margin_left = -58.7745
 margin_top = 397.686
 margin_right = 1094.23
 margin_bottom = 583.686
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 6 )
 text = "All the brothers want is
 to be together again"
 align = 1
@@ -624,14 +602,7 @@ one_shot = true
 
 [node name="Pause" type="CanvasLayer" parent="."]
 
-[node name="Pause" type="Control" parent="Pause" instance=ExtResource( 11 )]
-pause_mode = 2
-anchor_right = 1.0
-anchor_bottom = 1.0
-script = ExtResource( 17 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="Pause" parent="Pause" instance=ExtResource( 11 )]
 level = 5
 
 [node name="DFinish" type="AudioStreamPlayer" parent="."]
