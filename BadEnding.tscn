@@ -368,3 +368,5 @@ one_shot = true
 
 [node name="DFinish" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 8 )
+
+[connection signal="timeout" from="exit_timer" to="." method="_on_exit_timer_timeout"]
