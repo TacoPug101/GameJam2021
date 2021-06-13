@@ -531,7 +531,7 @@ shape = SubResource( 2 )
 position = Vector2( 58.5, 229 )
 
 [node name="RobotB" parent="." instance=ExtResource( 3 )]
-position = Vector2( 712, 424 )
+position = Vector2( 713.5, 424 )
 
 [node name="World" type="Control" parent="."]
 visible = false

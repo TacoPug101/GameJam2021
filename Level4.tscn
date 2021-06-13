@@ -561,7 +561,6 @@ one_shot = true
 [node name="Pause" type="CanvasLayer" parent="."]
 
 [node name="Pause" parent="Pause" instance=ExtResource( 14 )]
-visible = false
 level = 4
 
 [node name="DFinish" type="AudioStreamPlayer" parent="."]

@@ -4,6 +4,8 @@ var finished = 0
 var sound = 0
 
 func _process(_delta):
+	if get_node("/root/SceneChanger").max_level < 2:
+		 get_node("/root/SceneChanger").max_level = 2
 	if $tiles/side1/Exit.done + $tiles2/side1/Exit.done == 3:
 		finished += 1
 		if finished == 1:

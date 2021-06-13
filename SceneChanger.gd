@@ -1,6 +1,7 @@
 extends CanvasLayer
 
 var maddness = 0
+var max_level = 1
 signal scene_changed()
 
 func change_Scene(path, delay = 0.5):

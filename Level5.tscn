@@ -37,10 +37,10 @@ tracks/0/keys = {
 }
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 256.001, 256 )
+extents = Vector2( 511.998, 512.001 )
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 384.001, 384 )
+extents = Vector2( 384, 128 )
 
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 256, 256 )
@@ -372,6 +372,11 @@ shape = SubResource( 3 )
 position = Vector2( 512.002, 511.998 )
 shape = SubResource( 4 )
 
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="tiles/side1/RedButtonBox/Area2D"]
+position = Vector2( 512.002, 511.998 )
+rotation = 1.5708
+shape = SubResource( 4 )
+
 [node name="Exit" parent="tiles/side1" instance=ExtResource( 12 )]
 position = Vector2( 255.872, 48 )
 exit = 0
@@ -628,6 +633,8 @@ margin_right = 902.0
 margin_bottom = 352.0
 custom_fonts/font = SubResource( 7 )
 text = "+ Anger"
+align = 1
+valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
